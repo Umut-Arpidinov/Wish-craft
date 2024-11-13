@@ -1,21 +1,31 @@
 package com.google.wishcraft.presentation
 
 import android.app.Application
-import com.google.wishcraft.common.di.appModule
-import com.google.wishcraft.data.di.networkModule
+import com.google.wishcraft.di.appModule
+import com.google.wishcraft.di.networkModule
+import com.google.wishcraft.di.repositoryModule
+import com.google.wishcraft.di.useCaseModule
+import com.google.wishcraft.di.viewModelModule
+import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import timber.log.Timber
 
-class WishCraftApplication : Application(){
+class WishCraftApplication : Application() {
     override fun onCreate() {
         super.onCreate()
-        Timber.plant(Timber.DebugTree())
         startKoin {
+            androidContext(this@WishCraftApplication)
             modules(
-                appModule,
-                networkModule
+                listOf(
+                    appModule,
+                    networkModule,
+                    repositoryModule,
+                    useCaseModule,
+                    viewModelModule,
+                )
             )
         }
+        Timber.plant(Timber.DebugTree())
     }
 }
 

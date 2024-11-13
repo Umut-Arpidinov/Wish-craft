@@ -9,4 +9,27 @@
     <string name="error_gateway_timeout">Время ожидания ответа истекло!</string>
 
 
+    <string name="welcome_back">Добро пожаловать! Рады снова видеть вас!</string>
+    <string name="enter_email">Введите ваш email</string>
+    <string name="enter_password">Введите ваш пароль</string>
+    <string name="forgot_password">Забыли пароль?</string>
+    <string name="login">Войти</string>
+    <string name="dont_have_account">Нет аккаунта?</string>
+    <string name="register_now">\u0020Зарегистрироваться</string>
+    <string name="register_greeting">Здравствуйте! Зарегистрируйтесь, чтобы начать</string>
+    <string name="username">Имя пользователя</string>
+    <string name="email">Электронная почта</string>
+    <string name="password">Пароль</string>
+    <string name="confirm_password">Подтвердите пароль</string>
+    <string name="register">Зарегистрироваться</string>
+    <string name="already_have_account">Уже есть аккаунт?</string>
+    <string name="login_now">Войти сейчас</string>
+
+    <string name="home">Главная</string>
+    <string name="search">Поиск</string>
+    <string name="add">Добавить</string>
+    <string name="events">События</string>
+    <string name="profile">Профиль</string>
+
+
 </resources>

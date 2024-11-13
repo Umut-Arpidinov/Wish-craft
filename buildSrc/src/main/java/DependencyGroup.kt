@@ -9,7 +9,9 @@ internal val uiDependencies = listOf(
 )
 
 internal val koinDependencies = listOf(
-    Dependencies.koinAndroid
+    Dependencies.koinAndroid,
+    Dependencies.koinCore,
+    Dependencies.koinNavigation
 )
 
 internal val coroutinesDependencies = listOf(

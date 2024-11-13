@@ -1,4 +1,7 @@
 package com.google.wishcraft.presentation.ui.addWish
 
-class AddWishViewModel {
+import com.google.wishcraft.common.base.BaseViewModel
+
+class AddWishViewModel: BaseViewModel() {
+
 }

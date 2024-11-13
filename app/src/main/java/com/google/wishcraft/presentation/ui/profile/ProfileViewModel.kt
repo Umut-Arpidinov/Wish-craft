@@ -1,4 +1,6 @@
 package com.google.wishcraft.presentation.ui.profile
 
-class ProfileViewModel {
+import com.google.wishcraft.common.base.BaseViewModel
+
+class ProfileViewModel : BaseViewModel() {
 }

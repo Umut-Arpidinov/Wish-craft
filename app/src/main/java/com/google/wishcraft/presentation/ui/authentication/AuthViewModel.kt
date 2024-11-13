@@ -1,4 +1,6 @@
 package com.google.wishcraft.presentation.ui.authentication
 
-class AuthViewModel {
+import com.google.wishcraft.common.base.BaseViewModel
+
+class AuthViewModel: BaseViewModel() {
 }

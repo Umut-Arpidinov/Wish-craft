@@ -1,5 +1,8 @@
 package com.google.wishcraft.domain.interfaces
 
+import com.google.wishcraft.common.uitls.ApiResult
+import com.google.wishcraft.domain.models.MovieResponse
+
 interface MainRepository {
-    fun getMainContent()
+    suspend fun getMovies(): ApiResult<MovieResponse>
 }

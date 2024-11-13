@@ -54,4 +54,5 @@ dependencies {
     addKoinDependencies()
     addAndroidLifecycleDependencies()
     addTimberDependency()
+    addNavigationDependencies()
 }
