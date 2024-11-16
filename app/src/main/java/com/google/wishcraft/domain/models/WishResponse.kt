@@ -60,6 +60,10 @@ data class Meta (
     var perPage : Int? = null
 )
 
+data class UserResponse(
+    var user : User?=null
+)
+
 data class User (
     @SerializedName("id")
     var id: Int? = null,
@@ -76,6 +80,9 @@ data class User (
     @SerializedName("deletedAt")
     var deletedAt: String? = null,
     @SerializedName("wishes")
-    var wishes: ArrayList<String> = arrayListOf()
+    var wishes: ArrayList<Wish> = arrayListOf(),
+    var staticObject : String?=null,
+    var followers : ArrayList<User>,
+    var following : ArrayList<User>
 
 )

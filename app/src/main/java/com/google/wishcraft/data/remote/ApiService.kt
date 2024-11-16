@@ -2,7 +2,9 @@ package com.google.wishcraft.data.remote
 
 import com.google.wishcraft.domain.models.AuthTokenResponse
 import com.google.wishcraft.domain.models.MovieResponse
+import com.google.wishcraft.domain.models.User
 import com.google.wishcraft.domain.models.UserAuthModel
+import com.google.wishcraft.domain.models.UserResponse
 import com.google.wishcraft.domain.models.WishResponse
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -28,6 +30,7 @@ interface ApiService {
     @GET("wishes")
     suspend fun getWishes(): WishResponse
 
-
+    @GET("users/me")
+    suspend fun getUserInfo() : UserResponse
 
 }
