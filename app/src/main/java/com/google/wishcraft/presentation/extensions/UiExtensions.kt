@@ -15,12 +15,8 @@ import com.google.wishcraft.R
 fun ImageView.loadImage(url: String?, @DrawableRes drawableRes: Int) {
     Glide.with(this)
         .load(url)
-        .apply(RequestOptions()
-            .placeholder(drawableRes)
-            .error(R.drawable.ic_add)
-        )
         .listener(requestListener)
-
+        .placeholder(R.drawable.ic_empty)
         .into(this)
 }
 

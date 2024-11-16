@@ -46,8 +46,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Wishes"
-            android:textSize="18sp"
+            android:text="Желания"
+            android:textSize="16sp"
             style="@style/Urbanist14spRegular"
             />
 
@@ -77,8 +77,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Followers"
-            android:textSize="18sp"
+            android:text="Подписчики"
+            android:textSize="16sp"
             style="@style/Urbanist14spRegular"
             />
 
@@ -101,14 +101,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="24"
-            android:textSize="18sp"
+            android:textSize="16sp"
             style="@style/Urbanist14spRegular"
             />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Following"
+            android:text="Подписки"
             android:textSize="18sp"
             style="@style/Urbanist14spRegular"
             />
@@ -134,7 +134,7 @@
         android:id="@+id/tv_my_wishes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="My Wishes"
+        android:text="Мои желания"
         android:textStyle="bold"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
