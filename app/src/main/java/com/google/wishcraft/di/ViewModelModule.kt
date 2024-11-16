@@ -17,7 +17,7 @@ val viewModelModule = module {
     viewModel { MainAuthViewModel(get()) }
     viewModel { ProfileViewModel(get()) }
 
-    viewModel { ProfileViewModel() }
+    viewModel { ProfileViewModel(get()) }
     viewModel { AddWishViewModel(get(),get()) }
     viewModel { EventsViewModel() }
 }
