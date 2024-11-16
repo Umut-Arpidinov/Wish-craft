@@ -24,6 +24,7 @@ suspend fun <T> apiRequest(apiCall: suspend () -> T): ApiResult<T> {
         )
     } catch (ex: Exception) {
         Timber.e("apiRequest: ${ex.message}")
+        ex.printStackTrace()
         ApiResult.Error(ex)
     }
 }

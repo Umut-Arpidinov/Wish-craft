@@ -4,31 +4,26 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.google.wishcraft.common.base.BaseViewModel
 import com.google.wishcraft.domain.models.MovieResponse
+import com.google.wishcraft.domain.models.Wish
+import com.google.wishcraft.domain.models.WishResponse
 import com.google.wishcraft.domain.usecases.GetMovieUseCase
+import com.google.wishcraft.domain.usecases.GetWishesUseCase
 
 class HomeViewModel(
-    private val getMovieUseCase: GetMovieUseCase
+    private val getWishesUseCase: GetWishesUseCase
 ) : BaseViewModel() {
+
+    private val _wishes: MutableLiveData<WishResponse> = MutableLiveData()
+    val wishes: LiveData<WishResponse> get() = _wishes
 
 
     init {
-        getMovies()
+        getWishes()
     }
-
-    private val _movies = MutableLiveData<MovieResponse>()
-    val movies: LiveData<MovieResponse> = _movies
-
-
-    fun getMovies() {
-        request(
-            source = { getMovieUseCase.invoke()},
-            onSuccess =  {
-                _movies.value = it
-            },
-            onError = {
-                it.printStackTrace()
-            }
-        )
+    fun getWishes() {
+        request(source = {getWishesUseCase.invoke()}){
+            _wishes.value = it
+        }
     }
 
 }

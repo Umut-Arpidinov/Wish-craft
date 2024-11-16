@@ -1,14 +1,21 @@
 package com.google.wishcraft.presentation.ui.profile
 
-import androidx.fragment.app.viewModels
+import android.util.Log
+import com.google.wishcraft.R
 import com.google.wishcraft.common.base.BaseFragment
 import com.google.wishcraft.databinding.FragmentProfileBinding
-import com.google.wishcraft.presentation.ui.authentication.AuthViewModel
+import com.google.wishcraft.presentation.extensions.dialogWithActions
+import com.google.wishcraft.presentation.extensions.simpleDialog
+import com.google.wishcraft.presentation.ui.activities.MainAuthViewModel
+import org.koin.androidx.viewmodel.ext.android.activityViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ProfileFragment:
-    BaseFragment<AuthViewModel, FragmentProfileBinding>(FragmentProfileBinding::inflate) {
+    BaseFragment<ProfileViewModel, FragmentProfileBinding>(FragmentProfileBinding::inflate) {
 
-    override val viewModel: AuthViewModel by viewModels()
+    override val viewModel: ProfileViewModel by viewModel()
+
+    private val mainAuthViewModel: MainAuthViewModel by activityViewModel<MainAuthViewModel>()
 
     override fun initialize() {
         super.initialize()
@@ -16,6 +23,18 @@ class ProfileFragment:
 
     override fun initClicks()= with(binding){
         super.initClicks()
+        btnLogOut.setOnClickListener {
+            dialogWithActions(
+                getString(R.string.warning_log_out),
+                actionOk = {
+                    mainAuthViewModel.logOut()
+                },
+                actionNo = {
+
+                }
+            )
+
+        }
     }
 
     override fun observeViewModel() {
@@ -29,5 +48,6 @@ class ProfileFragment:
     override fun onLoading(loading: Boolean) {
         super.onLoading(loading)
     }
+
 
 }

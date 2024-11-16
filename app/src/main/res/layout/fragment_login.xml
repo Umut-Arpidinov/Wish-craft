@@ -26,6 +26,7 @@
         android:background="@drawable/input_field_background"
         android:layout_marginHorizontal="14dp"
         android:paddingVertical="14dp"
+        android:text="din@gmail.com"
         android:paddingHorizontal="12dp"
         android:hint="@string/enter_email"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,6 +52,7 @@
             android:imeOptions="actionDone"
             android:importantForAutofill="no"
             android:paddingVertical="14dp"
+            android:text="0772870115Din@"
             android:paddingHorizontal="8dp"
             android:hint="@string/enter_password"
             android:inputType="textPassword"
@@ -103,6 +105,17 @@
             android:layout_height="wrap_content"
             android:text="@string/register_now" />
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -49,19 +49,19 @@ class MainFragment :
                 showNavigationBar()
             }
         }
-        binding.bottomNavView.setupWithNavController(navController)
+        binding.bottomBarLayout.bottomNavView.setupWithNavController(navController)
 
     }
 
     private fun hideNavigationBar() {
-        if (binding.bottomNavView.isVisible) {
-            binding.bottomNavView.gone(true, 100)
+        if (binding.bottomBarLayout.bottomNavView.isVisible) {
+            binding.bottomBarLayout.bottomNavView.gone(true, 100)
         }
     }
 
     private fun showNavigationBar() {
-        if (!binding.bottomNavView.isVisible) {
-            binding.bottomNavView.visible(true)
+        if (!binding.bottomBarLayout.bottomNavView.isVisible) {
+            binding.bottomBarLayout.bottomNavView.visible(true)
         }
     }
 

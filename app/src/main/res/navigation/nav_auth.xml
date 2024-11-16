@@ -27,4 +27,21 @@
         android:id="@+id/mainFragment"
         android:name="com.google.wishcraft.presentation.ui.main.MainFragment"
         android:label="MainFragment" />
+
+    <action
+        android:id="@+id/toMainFragment"
+        app:destination="@id/mainFragment"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/nav_auth"
+        app:popUpToInclusive="true"
+        />
+
+    <action
+        android:id="@+id/toAuth"
+        app:destination="@id/nav_auth"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/nav_auth"
+        app:popUpToInclusive="true"
+        />
+
 </navigation>

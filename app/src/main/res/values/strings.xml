@@ -30,6 +30,10 @@
     <string name="add">Добавить</string>
     <string name="events">События</string>
     <string name="profile">Профиль</string>
+    <string name="ok_message">Oк</string>
+    <string name="yes_message">Да</string>
+    <string name="no_message">Нет</string>
+    <string name="warning_log_out">Вы действительно хотите выйти с аккаунта?</string>
 
 
 </resources>

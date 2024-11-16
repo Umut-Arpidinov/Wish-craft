@@ -5,6 +5,7 @@ import com.google.wishcraft.common.uitls.apiRequest
 import com.google.wishcraft.data.remote.ApiService
 import com.google.wishcraft.domain.interfaces.MainRepository
 import com.google.wishcraft.domain.models.MovieResponse
+import com.google.wishcraft.domain.models.WishResponse
 
 class MainRepositoryImpl(
     private val apiService: ApiService
@@ -12,5 +13,9 @@ class MainRepositoryImpl(
 
     override suspend fun getMovies(): ApiResult<MovieResponse> {
         return apiRequest { apiService.getMovies() }
+    }
+
+    override suspend fun getWishes(): ApiResult<WishResponse> {
+        return apiRequest { apiService.getWishes() }
     }
 }

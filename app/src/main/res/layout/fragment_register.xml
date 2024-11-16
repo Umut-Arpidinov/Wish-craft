@@ -16,7 +16,7 @@
         android:text="@string/register_greeting"
         android:textAppearance="@style/Urbanist25spBold"
         android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="@dimen/margin_10dp"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_height="wrap_content"/>
@@ -30,6 +30,7 @@
         android:background="@drawable/input_field_background"
         android:layout_marginHorizontal="14dp"
         android:paddingVertical="14dp"
+        android:maxLines="1"
         android:paddingHorizontal="12dp"
         android:hint="@string/username"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,6 +44,7 @@
         android:layout_marginTop="@dimen/margin_15dp"
         android:background="@drawable/input_field_background"
         android:layout_marginHorizontal="14dp"
+        android:maxLines="1"
         android:paddingVertical="14dp"
         android:paddingHorizontal="12dp"
         android:hint="@string/email"
@@ -104,17 +106,16 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/ll_register"
+        app:layout_constraintBottom_toTopOf="@id/llLogin"
         android:text="@string/register"
-        android:enabled="false"
         android:layout_marginHorizontal="14dp"
         app:layout_constraintTop_toBottomOf="@+id/confirmPasswordLayout" />
 
     <LinearLayout
-        android:id="@+id/ll_register"
+        android:id="@+id/llLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
@@ -135,5 +136,16 @@
             android:layout_height="wrap_content"
             android:text="@string/login_now" />
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
