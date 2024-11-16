@@ -24,7 +24,8 @@ class WishListAdapter : ListAdapter<Wish, WishListAdapter.WishViewHolder>(DiffUt
 
         fun bind(wish: Wish) = with(binding) {
            wish.staticObject?.url?.let {
-               ivWishImage.loadImage(it, R.drawable.ic_launcher_background)
+               val url = it.replace("localhost","192.168.189.210")
+               ivWishImage.loadImage(url, R.drawable.ic_launcher_background)
            }
             tvWishName.text = wish.giftName
             tvUserName.text = wish.user?.username

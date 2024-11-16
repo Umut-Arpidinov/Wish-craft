@@ -17,7 +17,7 @@
         android:title=""
         />
     <item
-        android:id="@+id/addNewFragment"
+        android:id="@+id/eventsFragment"
         android:icon="@drawable/ic_event"
         android:title="@string/events"
         />

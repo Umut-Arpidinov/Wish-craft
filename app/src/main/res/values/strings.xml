@@ -35,5 +35,18 @@
     <string name="no_message">Нет</string>
     <string name="warning_log_out">Вы действительно хотите выйти с аккаунта?</string>
 
+    <string name="link_of_product">Ссылка на товар </string>
+    <string name="add_button">ДОБАВИТЬ</string>
+    <string name="gift_name">Название подарка</string>
+    <string name="gift_name_hint">Название желаемого товара</string>
+    <string name="price">Цена</string>
+    <string name="price_hint">Цена товара</string>
+    <string name="desire_rate">Степень желаемости</string>
+    <string name="percentage_20">20%</string>
+    <string name="describe_it">Опишите это</string>
+    <string name="description_hint">Чтобы убедить других купить это для вас, опишите, почему это вам нравится</string>
+    <string name="error_message">Сообщение об ошибке</string>
+    <string name="save">Сохранить</string>
+
 
 </resources>

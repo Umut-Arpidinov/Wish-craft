@@ -31,4 +31,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size_20sp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,12 +12,17 @@
         android:id="@+id/searchFragment"
         android:name="com.google.wishcraft.presentation.ui.search.SearchFragment"
         android:label="SearchFragment" />
-    <fragment
-        android:id="@+id/addNewFragment"
-        android:name="com.google.wishcraft.presentation.ui.addWish.AddWishFragment"
-        android:label="AddWishFragment" />
+
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.google.wishcraft.presentation.ui.profile.ProfileFragment"
         android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/eventsFragment"
+        android:name="com.google.wishcraft.presentation.ui.events.EventsFragment"
+        android:label="EventsFragment" />
+    <fragment
+        android:id="@+id/addWishFragment"
+        android:name="com.google.wishcraft.presentation.ui.addWish.AddWishFragment"
+        android:label="AddWishFragment" />
 </navigation>

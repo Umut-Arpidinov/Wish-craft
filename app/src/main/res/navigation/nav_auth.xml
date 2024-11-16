@@ -26,7 +26,11 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.google.wishcraft.presentation.ui.main.MainFragment"
-        android:label="MainFragment" />
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_addWishFragment"
+            app:destination="@id/addWishFragment" />
+    </fragment>
 
     <action
         android:id="@+id/toMainFragment"
@@ -40,8 +44,10 @@
         android:id="@+id/toAuth"
         app:destination="@id/nav_auth"
         app:launchSingleTop="true"
-        app:popUpTo="@id/nav_auth"
-        app:popUpToInclusive="true"
         />
+    <fragment
+        android:id="@+id/addWishFragment"
+        android:name="com.google.wishcraft.presentation.ui.addWish.AddWishFragment"
+        android:label="AddWishFragment" />
 
 </navigation>

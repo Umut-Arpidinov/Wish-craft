@@ -38,19 +38,6 @@ data class Wish(
     var staticObject: StaticObject? = null
 )
 
-data class StaticObject (
-    @SerializedName("id")
-    var id: Int? = null,
-    @SerializedName("url")
-    var url: String? = null,
-    @SerializedName("createdAt")
-    var createdAt: String? = null,
-    @SerializedName("updatedAt")
-    var updatedAt: String? = null,
-    @SerializedName("deletedAt")
-    var deletedAt: String? = null
-)
-
 data class Meta (
     @SerializedName("total"   )
     var total   : Int? = null,
