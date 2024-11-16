@@ -1,4 +1,4 @@
-package com.google.wishcraft.data.di
+package com.google.wishcraft.di
 
 import android.app.Application
 import com.chuckerteam.chucker.BuildConfig
@@ -7,13 +7,27 @@ import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.wishcraft.common.uitls.AppConstants
+import com.google.wishcraft.data.local.AuthLocalSource
+import com.google.wishcraft.data.local.AuthLocalSourceImpl
 import com.google.wishcraft.data.remote.ApiService
+import com.google.wishcraft.data.remote.ClientAuthInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
+
+val networkModule = module {
+    single { provideOkHttpClient(get(),get(), get()) }
+    single { provideGson() }
+    single { provideGsonConverterFactory(get()) }
+    single { provideInterceptor() }
+    single { provideChucker(get()) }
+    single { provideRetrofit(get(),get()) }
+    single { provideService(get()) }
+    single<AuthLocalSource> { AuthLocalSourceImpl(get()) }
+}
 
 
 fun provideChucker(app: Application) =
@@ -29,7 +43,7 @@ fun provideRetrofit(
     gsonConverterFactory: GsonConverterFactory,
 ): Retrofit = Retrofit.Builder()
     .addConverterFactory(gsonConverterFactory)
-    .baseUrl(AppConstants.BASE_URL)
+    .baseUrl("https://2c44-213-109-65-222.ngrok-free.app/v1/")
     .client(okHttpClient)
     .build()
 
@@ -52,7 +66,9 @@ fun provideGson(): Gson = GsonBuilder().setLenient().create()
 fun provideOkHttpClient(
     loggingInterceptor: HttpLoggingInterceptor,
     chuckerInterceptor: ChuckerInterceptor,
+    authLocalSource: AuthLocalSource
 ) = OkHttpClient.Builder()
+    .addInterceptor(ClientAuthInterceptor(authLocalSource))
     .addInterceptor(loggingInterceptor)
     .addInterceptor(chuckerInterceptor)
     .retryOnConnectionFailure(true)
@@ -65,13 +81,5 @@ fun provideOkHttpClient(
 fun provideService(retrofit: Retrofit): ApiService =
     retrofit.create(ApiService::class.java)
 
-val networkModule = module {
-    single { provideOkHttpClient(get(),get()) }
-    single { provideGson() }
-    single { provideGsonConverterFactory(get()) }
-    single { provideInterceptor() }
-    single { provideChucker(get()) }
-    single { provideRetrofit(get(),get()) }
-    single { provideService(get()) }
 
-}
+

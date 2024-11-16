@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_auth"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.google.wishcraft.presentation.ui.authentication.login.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.google.wishcraft.presentation.ui.authentication.registration.RegistrationFragment"
+        android:label="RegistrationFragment" >
+        <action
+            android:id="@+id/action_registrationFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.google.wishcraft.presentation.ui.main.MainFragment"
+        android:label="MainFragment" />
+
+    <action
+        android:id="@+id/toMainFragment"
+        app:destination="@id/mainFragment"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/nav_auth"
+        app:popUpToInclusive="true"
+        />
+
+    <action
+        android:id="@+id/toAuth"
+        app:destination="@id/nav_auth"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/nav_auth"
+        app:popUpToInclusive="true"
+        />
+
+</navigation>

@@ -94,4 +94,7 @@ object Dependencies {
         "androidx.exifinterface:exifinterface:${Versions.exifInterfaceVersion}"
 
     const val koinAndroid = "io.insert-koin:koin-android:${Versions.koinVersion}"
+    const val koinNavigation = "io.insert-koin:koin-androidx-navigation:${Versions.koinVersion}"
+    const val koinCore = "io.insert-koin:koin-core:${Versions.koinVersion}"
+    const val koinViewModel = "io.insert-koin:koin-androidx-viewmodel:${Versions.koinVersion}"
 }
