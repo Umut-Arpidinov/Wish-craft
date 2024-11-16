@@ -4,10 +4,15 @@ import com.google.wishcraft.common.uitls.ApiResult
 import com.google.wishcraft.common.uitls.apiRequest
 import com.google.wishcraft.data.remote.ApiService
 import com.google.wishcraft.domain.interfaces.MainRepository
+import com.google.wishcraft.domain.models.ImageRequestBody
 import com.google.wishcraft.domain.models.MovieResponse
+import com.google.wishcraft.domain.models.StaticObject
+import com.google.wishcraft.domain.models.StaticObjectResponse
+import com.google.wishcraft.domain.models.Wish
 import com.google.wishcraft.domain.models.User
 import com.google.wishcraft.domain.models.UserResponse
 import com.google.wishcraft.domain.models.WishResponse
+import okhttp3.MultipartBody
 
 class MainRepositoryImpl(
     private val apiService: ApiService
@@ -19,6 +24,15 @@ class MainRepositoryImpl(
 
     override suspend fun getWishes(): ApiResult<WishResponse> {
         return apiRequest { apiService.getWishes() }
+    }
+
+    override suspend fun uploadImage(body: ImageRequestBody): ApiResult<StaticObjectResponse> {
+        val part = MultipartBody.Part.createFormData("image", body.getFileName(), body)
+        return apiRequest { apiService.uploadImage(part) }
+    }
+
+    override suspend fun createNewWish(wish: Wish): ApiResult<Unit> {
+        return apiRequest { apiService.createNewWish(wish) }
     }
 
     override suspend fun getUserInfo(): ApiResult<UserResponse> {

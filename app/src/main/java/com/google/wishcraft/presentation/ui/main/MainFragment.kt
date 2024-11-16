@@ -2,6 +2,7 @@ package com.google.wishcraft.presentation.ui.main
 
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.wishcraft.R
 import com.google.wishcraft.common.base.BaseFragment
@@ -24,6 +25,11 @@ class MainFragment :
 
     override fun initClicks() = with(binding) {
         super.initClicks()
+        bottomBarLayout.btnAddWish.setOnClickListener {
+            findNavController().navigate(
+               MainFragmentDirections.actionMainFragmentToAddWishFragment()
+            )
+        }
     }
 
     override fun observeViewModel() {
@@ -70,7 +76,7 @@ class MainFragment :
         private val SHOW_BOTTOM_NAV_VIEW_LIST = setOf(
             R.id.homeFragment,
             R.id.searchFragment,
-            R.id.addNewFragment,
+            R.id.eventsFragment,
             R.id.profileFragment,
         )
     }
