@@ -10,6 +10,7 @@ import com.google.wishcraft.domain.models.StaticObject
 import com.google.wishcraft.domain.models.StaticObjectResponse
 import com.google.wishcraft.domain.models.Wish
 import com.google.wishcraft.domain.models.User
+import com.google.wishcraft.domain.models.UserListResponse
 import com.google.wishcraft.domain.models.UserResponse
 import com.google.wishcraft.domain.models.WishResponse
 import okhttp3.MultipartBody
@@ -22,8 +23,14 @@ class MainRepositoryImpl(
         return apiRequest { apiService.getMovies() }
     }
 
-    override suspend fun getWishes(): ApiResult<WishResponse> {
-        return apiRequest { apiService.getWishes() }
+    override suspend fun getWishes(
+        userId: Int?,
+        giftName: String?
+    ): ApiResult<WishResponse> {
+        return apiRequest { apiService.getWishes(
+            userId = userId,
+            giftName = giftName
+        ) }
     }
 
     override suspend fun uploadImage(body: ImageRequestBody): ApiResult<StaticObjectResponse> {
@@ -38,4 +45,22 @@ class MainRepositoryImpl(
     override suspend fun getUserInfo(): ApiResult<UserResponse> {
         return apiRequest { apiService.getUserInfo() }
     }
+
+    override suspend fun copyWish(id: Int): ApiResult<Unit> {
+        return apiRequest { apiService.copyWish(id) }
+    }
+
+    override suspend fun getUserByName(userName: String): ApiResult<UserListResponse> {
+        return apiRequest { apiService.getUserByName(userName) }
+    }
+
+    override suspend fun followUser(id: Int): ApiResult<Unit> {
+        return apiRequest { apiService.followUser(id) }
+    }
+
+    override suspend fun unfollowUser(id: Int): ApiResult<Unit> {
+        return apiRequest { apiService.unfollowUser(id) }
+    }
+
+
 }

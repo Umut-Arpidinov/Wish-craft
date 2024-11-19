@@ -5,8 +5,9 @@ internal val uiDependencies = listOf(
     Dependencies.fragmentKtx,
     Dependencies.constraintLayout,
     Dependencies.splashScreen,
-    Dependencies.glide
-)
+    Dependencies.glide,
+    Dependencies.swipeRefreshLayout
+    )
 
 internal val koinDependencies = listOf(
     Dependencies.koinAndroid,

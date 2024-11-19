@@ -19,16 +19,30 @@ class WishListAdapter : ListAdapter<Wish, WishListAdapter.WishViewHolder>(DiffUt
         onWishClickListener = listener
     }
 
+
+    private var onSaveClickListener: ((Wish) -> Unit)? = null
+
+    fun onSaveClickListener(listener: (Wish) -> Unit) {
+        onSaveClickListener = listener
+    }
+
+
+
+
     inner class WishViewHolder(val binding: ItemWishBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(wish: Wish) = with(binding) {
            wish.staticObject?.url?.let {
-               val url = it.replace("localhost","192.168.189.210")
-               ivWishImage.loadImage(url, R.drawable.ic_launcher_background)
+               val url = it.replace("localhost","192.168.1.52")
+               ivWishImage.loadImage(url, R.drawable.ic_empty)
            }
             tvWishName.text = wish.giftName
             tvUserName.text = wish.user?.username
+
+            icSave.setOnClickListener {
+                onSaveClickListener?.invoke(wish)
+            }
         }
     }
 
@@ -58,9 +72,5 @@ class WishListAdapter : ListAdapter<Wish, WishListAdapter.WishViewHolder>(DiffUt
             }
         }
     }
-
-
-
-
 
 }

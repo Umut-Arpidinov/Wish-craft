@@ -44,7 +44,10 @@
         android:id="@+id/toAuth"
         app:destination="@id/nav_auth"
         app:launchSingleTop="true"
+        app:popUpTo="@id/nav_auth"
+        app:popUpToInclusive="true"
         />
+
     <fragment
         android:id="@+id/addWishFragment"
         android:name="com.google.wishcraft.presentation.ui.addWish.AddWishFragment"

@@ -1,36 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="@dimen/margin_16dp"
-    android:layout_margin="@dimen/margin_8dp"
+    app:cardBackgroundColor="@color/white"
+    app:strokeColor="@color/sea_blue_2"
+    app:strokeWidth="1dp"
     xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:orientation="vertical"
-        android:padding="@dimen/margin_8dp"
+        android:layout_marginTop="@dimen/margin_8dp"
+        android:paddingBottom="@dimen/margin_8dp"
+
+        android:layout_marginHorizontal="@dimen/margin_8dp"
         android:layout_height="wrap_content">
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/ivWishImage"
+        <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/RoundedSquare"
-            tools:src="@tools:sample/backgrounds/scenic" />
+            android:layout_height="wrap_content">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivWishImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/RoundedSquare"
+                tools:src="@tools:sample/backgrounds/scenic" />
+        </FrameLayout>
+
+
+
+            <TextView
+                android:id="@+id/tvWishName"
+                android:layout_width="match_parent"
+                android:text="Macbook Air M2 15”"
+                android:layout_marginTop="@dimen/margin_4dp"
+                android:layout_weight="1"
+                style="@style/Urbanist14spSemiBold"
+                android:layout_height="wrap_content"/>
+
 
         <TextView
-            android:id="@+id/tvWishName"
+            android:id="@+id/tvPrice"
             android:layout_width="wrap_content"
-            android:text="Macbook Air M2 15”"
+            android:text="12313 сом"
             android:layout_marginTop="@dimen/margin_4dp"
+            android:textColor="@color/sea_blue_2"
             style="@style/Urbanist14spSemiBold"
+            android:textSize="@dimen/text_size_16sp"
             android:layout_height="wrap_content"/>
 
         <LinearLayout
@@ -42,8 +64,8 @@
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/iv_profile_image"
-                android:layout_width="40dp"
-                android:layout_height="match_parent"
+                android:layout_width="@dimen/margin_32dp"
+                android:layout_height="@dimen/margin_32dp"
                 android:adjustViewBounds="true"
                 android:gravity="start|center"
                 android:scaleType="centerCrop"
@@ -56,25 +78,22 @@
             <TextView
                 android:id="@+id/tvUserName"
                 android:layout_width="wrap_content"
-                android:text="Adilet Aibekov"
+                android:text="Adilet Aibekorwerwe234234234v"
                 android:layout_weight="1"
                 style="@style/Urbanist14spRegular"
                 android:layout_marginStart="@dimen/margin_8dp"
                 android:gravity="start|center"
                 android:layout_height="match_parent"
                 />
-
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_add"
-                android:layout_marginEnd="6dp"
-                />
-
-
+                android:id="@+id/icSave"
+                android:layout_width="wrap_content"
+                android:src="@drawable/ic_save_more"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"/>
         </LinearLayout>
 
 
     </LinearLayout>
 
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

@@ -23,9 +23,9 @@ class MyWishesAdapter : ListAdapter<Wish, MyWishesAdapter.WishViewHolder>(DiffUt
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(wish: Wish) = with(binding) {
-            wish.staticObject?.url?.let {
-                ivWishImage.loadImage(it, R.drawable.ic_launcher_background)
-            }
+           wish.staticObject?.url.let {
+               ivWishImage.loadImage(it, R.drawable.ic_empty)
+           }
             tvProductName.text = wish.giftName
             tvPrice.text = wish.price.toString()
         }
@@ -41,7 +41,6 @@ class MyWishesAdapter : ListAdapter<Wish, MyWishesAdapter.WishViewHolder>(DiffUt
 
     override fun onBindViewHolder(holder: MyWishesAdapter.WishViewHolder, position: Int) {
         holder.bind(getItem(position))
-
     }
 
 

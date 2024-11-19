@@ -7,6 +7,12 @@
         <item name="android:fontFamily">@font/urbanist_semi_bold</item>
     </style>
 
+    <style name="Urbanist20spBold">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/urbanist_semi_bold</item>
+    </style>
+
     <style name="Urbanist14spSemiBold">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/black</item>
@@ -30,7 +36,7 @@
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
         <item name="cornerRadius">12dp</item>
-        <item name="backgroundTint">@color/selector_button</item>
+        <item name="backgroundTint">@color/sea_blue_2</item>
         <item name="android:letterSpacing">0.01</item>
         <item name="android:textSize">15sp</item>
         <item name="android:textStyle">normal</item>
@@ -41,6 +47,18 @@
         <item name="android:letterSpacing">-0.04</item>
         <item name="fontFamily">@font/urbanist_regular</item>
         <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="EletBottomSheetDialogTheme" parent="Theme.MaterialComponents.BottomSheetDialog">
+        <item name="android:theme">@style/Theme.WishCraft</item>
+        <item name="bottomSheetStyle">@style/ModalStyle</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:navigationBarColor">@color/black</item>
+    </style>
+
+    <style name="ModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
     </style>
 
     <style name="fab_3_rounded">
@@ -55,4 +73,25 @@
     <style name="CircleShape">
         <item name="cornerSize">50%</item>
     </style>
+
+    <style name="BottomSheetBackground">
+        <item name="android:background">@drawable/bottom_sheet_background</item>
+    </style>
+
+    <style name="LayoutSilverBackground">
+        <item name="android:background">@drawable/rounded_background_silver</item>
+    </style>
+
+    <style name="EletChipStyle" parent="@style/Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/selector_chip_background</item>
+        <item name="android:textColor">@color/selector_chip_text_color</item>
+        <item name="chipStrokeColor">@color/sea_blue_2</item>
+        <item name="chipStartPadding">@dimen/margin_10dp</item>
+        <item name="chipEndPadding">@dimen/margin_10dp</item>
+        <item name="android:fontFamily">@font/urbanist_regular</item>
+        <item name="android:textSize">@dimen/text_size_14sp</item>
+        <item name="chipCornerRadius">@dimen/margin_8dp</item>
+        <item name="chipIconVisible">true</item>
+    </style>
+
 </resources>

@@ -7,7 +7,13 @@ import com.google.wishcraft.domain.models.WishResponse
 class GetWishesUseCase (
     private val repository: MainRepository
 ) {
-    suspend  operator fun invoke(): ApiResult<WishResponse> {
-        return repository.getWishes()
+    suspend  operator fun invoke(
+        userId: Int? = null,
+        giftName: String? = null
+    ): ApiResult<WishResponse> {
+        return repository.getWishes(
+            userId = userId,
+            giftName = giftName
+        )
     }
 }

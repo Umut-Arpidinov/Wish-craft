@@ -7,12 +7,12 @@
 
 
     <style name="Theme.WishCraft" parent="Base.Theme.WishCraft">
-        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimary">@color/sea_blue_2</item>
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
         <item name="colorPrimaryVariant">@color/teal</item>
         <item name="colorOnPrimary">@color/transparent</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/black</item>
+        <item name="colorSecondary">@color/sea_blue_2</item>
         <item name="android:statusBarColor">@color/white</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:textColor">@color/black</item>

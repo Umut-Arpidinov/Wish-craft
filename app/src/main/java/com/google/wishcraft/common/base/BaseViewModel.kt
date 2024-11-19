@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.google.gson.annotations.Until
 import com.google.wishcraft.common.uitls.ApiResult
 import com.google.wishcraft.common.uitls.MessageException
 import com.google.wishcraft.common.uitls.StringMessageException
@@ -75,6 +76,21 @@ abstract class BaseViewModel : ViewModel(),CoroutineScope{
             setLoading(true)
             val result = source()
             setLoading(false)
+            processResult(result, onError, onSuccess)
+            onFinally()
+        }
+    }
+
+    protected inline fun <T>requestForRefresh(
+        crossinline source: suspend CoroutineScope.() -> ApiResult<T>,
+        crossinline onError: (Throwable) -> Unit = { },
+        crossinline onFinally: () -> Unit = {},
+        crossinline onSuccess: (data: T) -> Unit,
+        crossinline refreshCallBack: () -> Unit
+    ) {
+        viewModelScope.launch {
+            val result = source()
+            refreshCallBack.invoke()
             processResult(result, onError, onSuccess)
             onFinally()
         }

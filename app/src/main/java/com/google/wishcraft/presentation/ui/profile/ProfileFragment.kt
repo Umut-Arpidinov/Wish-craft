@@ -25,18 +25,18 @@ class ProfileFragment:
 
     override fun initClicks()= with(binding){
         super.initClicks()
+
     }
 
     override fun observeViewModel() {
         super.observeViewModel()
         viewModel.user.observe(viewLifecycleOwner){
-            it.user?.staticObject?.let {
-                binding.ivAva.loadImage(it, R.drawable.ic_launcher_background)
-            }
+            /*it.user?.staticObject.let {
+                binding.ivAva.loadImage(it, R.drawable.profile_placeholder)
+            }*/
             binding.tvUsername.text = it.user?.username
             binding.tvFollowersValue.text = it?.user?.followers?.size?.toString()?:"0"
             binding.tvFollowingValue.text = it?.user?.following?.size?.toString()?:"0"
-            binding.tvMyWishes.text = it?.user?.wishes?.size?.toString()?:"0"
             adapter.submitList(it?.user?.wishes)
         }
     }
@@ -49,6 +49,7 @@ class ProfileFragment:
         super.onLoading(loading)
         binding.progress.isVisible = loading
     }
+
 
 
 }

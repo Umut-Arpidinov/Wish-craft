@@ -125,7 +125,7 @@
         android:textSize="18sp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        style="@style/Urbanist14spRegular"
+        style="@style/Urbanist25spBold"
         />
 
     <TextView
@@ -134,7 +134,7 @@
         android:id="@+id/tv_my_wishes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="My Wishes"
+        android:text="My Wishes"
         android:textStyle="bold"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"

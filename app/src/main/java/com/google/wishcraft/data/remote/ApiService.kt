@@ -2,10 +2,9 @@ package com.google.wishcraft.data.remote
 
 import com.google.wishcraft.domain.models.AuthTokenResponse
 import com.google.wishcraft.domain.models.MovieResponse
-import com.google.wishcraft.domain.models.User
-import com.google.wishcraft.domain.models.StaticObject
 import com.google.wishcraft.domain.models.StaticObjectResponse
 import com.google.wishcraft.domain.models.UserAuthModel
+import com.google.wishcraft.domain.models.UserListResponse
 import com.google.wishcraft.domain.models.UserResponse
 import com.google.wishcraft.domain.models.Wish
 import com.google.wishcraft.domain.models.WishResponse
@@ -13,8 +12,10 @@ import okhttp3.MultipartBody
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Multipart
+import retrofit2.http.PATCH
 import retrofit2.http.POST
 import retrofit2.http.Part
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ApiService {
@@ -34,7 +35,10 @@ interface ApiService {
     ): AuthTokenResponse
 
     @GET("wishes")
-    suspend fun getWishes(): WishResponse
+    suspend fun getWishes(
+        @Query("giftName") giftName: String? = null,
+        @Query("userId") userId: Int? = null
+    ): WishResponse
 
     @GET("users/me")
     suspend fun getUserInfo() : UserResponse
@@ -48,6 +52,30 @@ interface ApiService {
     suspend fun createNewWish(
         @Body wish: Wish
     )
+
+    @POST("wishes/copy/{wish_id}")
+    suspend fun copyWish(
+        @Path("wish_id") id: Int
+    )
+
+    @GET("users")
+    suspend fun getUserByName(
+        @Query("username") username: String
+    ): UserListResponse
+
+    @PATCH("users/follow/{followee_id}")
+    suspend fun followUser(
+        @Path("followee_id") id: Int
+    )
+
+    @PATCH("users/unfollow/{followee_id}")
+    suspend fun unfollowUser(
+        @Path("followee_id") id: Int
+    )
+
+
+
+
 
 
 

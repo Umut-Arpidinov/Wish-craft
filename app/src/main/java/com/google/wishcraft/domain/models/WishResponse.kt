@@ -48,7 +48,11 @@ data class Meta (
 )
 
 data class UserResponse(
-    var user : User?=null
+    var user : User?= null
+)
+
+data class UserListResponse(
+    val users: List<User>? = null
 )
 
 data class User (
@@ -66,10 +70,14 @@ data class User (
     var updatedAt: String? = null,
     @SerializedName("deletedAt")
     var deletedAt: String? = null,
+    @SerializedName("staticObject")
+    var staticObject: StaticObject? = null,
     @SerializedName("wishes")
     var wishes: ArrayList<Wish> = arrayListOf(),
-    var staticObject : String?=null,
     var followers : ArrayList<User>,
-    var following : ArrayList<User>
-
+    var following : ArrayList<User>,
+    var followed: Boolean = false,
+    val gender: String? = null,
+    val birthday: String? = null,
+    val location: String? = null
 )

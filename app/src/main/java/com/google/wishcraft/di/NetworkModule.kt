@@ -43,7 +43,7 @@ fun provideRetrofit(
     gsonConverterFactory: GsonConverterFactory,
 ): Retrofit = Retrofit.Builder()
     .addConverterFactory(gsonConverterFactory)
-    .baseUrl("https://2c44-213-109-65-222.ngrok-free.app/v1/")
+    .baseUrl("https://5afa-158-181-234-184.ngrok-free.app/v1/")
     .client(okHttpClient)
     .build()
 

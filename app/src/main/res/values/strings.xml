@@ -47,6 +47,11 @@
     <string name="description_hint">Чтобы убедить других купить это для вас, опишите, почему это вам нравится</string>
     <string name="error_message">Сообщение об ошибке</string>
     <string name="save">Сохранить</string>
-
+    <string name="people">Люди</string>
+    <string name="wish">Желания</string>
+    <string name="message_not_found">Никаких результатов найдено не было</string>
+    <string name="adjust_try">Попробуйте настроить свой поиск , чтобы найти то, что вы ищете</string>
+    <string name="following">Подписаны</string>
+    <string name="follow">Подписаться</string>
 
 </resources>
